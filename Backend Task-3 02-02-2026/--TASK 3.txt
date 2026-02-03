@@ -1,0 +1,31 @@
+--TASK 3 (INSERT)
+Insert into STUDENTS (student_id,name,email,age,join_date) Values (1000000011,'Shyam Verma','shyamverma@gmail.com',27,'2025-08-21');
+Insert into STUDENTS (student_id,name,email,age,join_date) Values (1000000012,'John Doe','johndoe@gmail.com',20,'2023-02-11');
+Insert into STUDENTS (student_id,name,email,age,join_date) Values (1000000013,'Neha Sharma','nehasharma@gmail.com',37,'2025-09-21');
+
+Insert into COURSES Values (6,'Chemistry',99999.99);
+
+--TASK 3 (SELECT)
+Select * from STUDENTS;
+Select name , email from STUDENTS;
+Select * from STUDENTS order by age desc;
+Select top 5 * from STUDENTS order by join_date desc;
+Select distinct age from STUDENTS;
+Select course_name from COURSES;
+
+--TASK 3 (UPDATE)
+Update STUDENTS set age = 38 where student_id = 1000000011;
+Update STUDENTS set active_flag = 0 where student_id IN (1000000011,1000000012);
+Update COURSES set fees = fees * 1.10 where fees < 10000.00;
+
+--TASK 3 (DELETE)
+Delete  from STUDENTS where student_id = 1000000011;
+Delete  from COURSES where fees < 10000;
+Delete from STUDENTS where join_date < '2023-03-23';
+
+--TASK 3 (ALTER)
+Alter table Students alter column name varchar(100) NOT NULL;
+EXEC sp_rename 'STUDENTS.join_date', 'registration_date', 'COLUMN';
+alter table Students add Phone_Number Varchar(10)  NULL;
+
+

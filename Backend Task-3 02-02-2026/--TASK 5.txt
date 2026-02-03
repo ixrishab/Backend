@@ -1,0 +1,19 @@
+--TASK 5 (CouNt)
+Select Count(*) as CountOfTotalStudents from STUDENTS;
+Select Count(student_id) as CountOfActiveStudents from STUDENTS where active_flag = 1;
+
+--(Sum /Avg)
+ Select sum(fees) as TotalCourseFees from COURSES;
+ Select Avg(fees) as AverageCourseFees from COURSES;
+ Select sum(fees) from COURSES where fees > 20000;
+
+ --(Min / Max)
+ Select min(age) from STUDENTS;
+ Select Max(fees) from COURSES;
+select max(registration_date) from STUDENTS;
+select min(registration_date) from STUDENTS;
+
+--Group By
+Select count(ac) from STUDENTS
+
+
