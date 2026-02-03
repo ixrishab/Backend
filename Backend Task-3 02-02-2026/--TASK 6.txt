@@ -1,0 +1,6 @@
+--TASK 6 (Combined Queries)
+Select * from STUDENTS where age > 20 order By age desc;
+Select count(student_id) from STUDENTS where name like '%a%';
+Select course_name from COURSES where fees between 10000 AND 20000 order by fees desc;
+Select name from STUDENTS where active_flag = 0 AND age is not null;
+Select course_id,count(*) as enrollment_count from ENROLMENTS group by course_id having count(*) > 1;

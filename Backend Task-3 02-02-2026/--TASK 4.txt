@@ -1,0 +1,20 @@
+--TASK 4 (Where)
+Select * from STUDENTS where age > 21;
+Select * from STUDENTS where active_flag = 1;
+Select course_name from COURSES where fees > 10000 and fees < 50000;
+Select * from STUDENTS where age IN (20,22,25);
+
+ --TASK 4 (AND / OR)
+ Select * from STUDENTS where age > 20 AND active_flag = 1;
+ Select * from STUDENTS where age < 20 AND active_flag = 0;
+ Select * from COURSES where fees > 20000 and course_name like '%Ch%';
+
+ --TASK 4 (Like pattern)
+ Select *  from STUDENTS where email like '%gmail.com';
+ Select  * from COURSES where course_name like '%Ch%'
+
+ --TASK 4 (NUll Checks)
+ Insert into STUDENTS Values (1000000015,'Saleem Khan','SaleemKhan@Yahoo.com',NULL,'2022-09-15',1,9897654567);
+ Select * from STUDENTS Where age is NULL;
+ Select * from STUDENTS Where age is Not NULL;
+ 
