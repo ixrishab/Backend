@@ -14,6 +14,11 @@ select max(registration_date) from STUDENTS;
 select min(registration_date) from STUDENTS;
 
 --Group By
-Select count(ac) from STUDENTS
+Select active_flag, count(active_flag) as active_flag_count from STUDENTS group by active_flag;
+Select age,COUNT(age) from STUDENTS group by age;
 
+--Having
+select course_id, count(*) as  enrollment_count from ENROLMENTS group by course_id having count(*) > 3;
+select avg(age) as average_age from STUDENTS group by age having age > 21;
+SELECT course_id, COUNT(*) AS total_enrollments FROM ENROLMENTS GROUP BY course_id HAVING COUNT(*) > 2;
 
