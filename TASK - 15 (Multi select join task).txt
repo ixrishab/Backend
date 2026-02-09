@@ -1,0 +1,10 @@
+TASK - 15 (Multi select join task)
+
+Select * from students s join student_courses sc on s.id = sc.student_id join courses c on c.id = sc.course_id;
+
+Select *,
+	Case 
+	when amount > 1000 then 'Good Salary'
+	when amount < 1000 then 'Bad  Salary'
+	End as Salary_Status
+From Orders;

@@ -1,0 +1,14 @@
+TASK - 8
+
+Select * from Customers;
+Select * from Orders;
+Select * from order_items;
+
+Select * from Customers c join Orders o on o.customer_id = c.customer_id join order_items oi on oi.order_id = o.order_id;
+
+Select * from Orders o join order_items oi on oi.order_id = o.order_id join Products p on  p.product_id = oi.product_id join Suppliers s on s.supplier_id = p.supplier_id;
+
+Select * from Employees join Departments on Employees.dep_id = Departments.dep_id;
+
+select o.customer_id,o.order_id,p.product_name,sp.supplier_id,sp.supplier_name from Orders as o join order_items as ot on o.order_id = ot.order_id join products as p on p.product_id = ot.product_id join suppliers as sp on sp.supplier_id = p.supplier_id 
+

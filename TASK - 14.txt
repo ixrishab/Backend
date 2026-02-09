@@ -1,0 +1,44 @@
+TASK - 14
+
+--Customers whose id IN (select customer_id from orders)
+Select * from Customers where Customers.customer_id in (Select customer_id from Orders);
+
+--Customers whose id NOT IN (select customer_id from orders)
+Select * from Customers where Customers.customer_id not in (Select customer_id from Orders);
+
+--Products NOT IN ordered products list
+Select * from Products where product_id not in (Select product_id from order_items);
+
+--Employees NOT IN departments table
+Select * from Employees where dep_id  not in (select dep_id from Departments);
+
+--Orders where amount > (subquery average amount)
+Select * from Orders where amount > (Select AVG(amount) from Orders);
+
+--Customers who placed orders above average order value
+Select o.customer_id,c.*,o.* from Orders o join Customers c on c.customer_id=o.order_id where amount > (Select AVG(amount) from Orders);
+
+--Departments IN list of active departments (subquery)
+Select dep_name from Departments where dep_id in
+(Select e.dep_id from Employees e join Departments d on d.dep_id = e.dep_id group by e.dep_id having COUNT(e.dep_id) > 1);
+
+alter table orders add status varchar(50)
+update orders 
+set status ='completed' where order_id in (1001,1002,1003,1006,1007)
+
+update orders 
+set status ='cancelled' where order_id in (1004,1005,1008,1009)
+
+Select * from Orders;
+
+Select * from Customers where Customers.customer_id not in (Select o.customer_id from Customers c join Orders o on o.customer_id=c.customer_id where o.status = 'cancelled');
+
+--Use EXISTS to find customers with orders
+Select customer_id,name from Customers  where Exists (Select customer_id from Orders where Orders.customer_id = Customers.customer_id);
+
+--Use NOT EXISTS to find customers without orders
+Select customer_id,name from Customers  where not  Exists (Select customer_id from Orders where Orders.customer_id = Customers.customer_id);
+
+--Use correlated subquery with join
+Select * from Customers c join (Select customer_id,SUM(amount) as total_amount from Orders  group by customer_id) o on c.customer_id = o.customer_id;
+
