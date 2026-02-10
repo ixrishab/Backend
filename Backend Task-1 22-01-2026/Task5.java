@@ -35,7 +35,7 @@ public class Task5 {
 		Employee e1 = new Employee(1, "Alice", 5000);
 		Employee e2 = new Employee(2, "Bob", 4200);
 
-		// show that companyName is shared (static)
+		
 		Employee.companyName = "Acme Corp";
 
 		e1.displayEmployeeDetails();
