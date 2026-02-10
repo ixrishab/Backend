@@ -48,7 +48,6 @@ public class task5 {
    }
    static void processLine(String line,Set<Integer> studentIds,List<String> validStudents,BufferedWriter validWriter) throws Exception{
     String[] data = line.split(",");
-        //checking the n=3 such that each is separated by column
         if (data.length != 3) {
             throw new InvalidStudentException("Invalid format");
         }
@@ -64,7 +63,6 @@ public class task5 {
         }
         StringBuilder sb = new StringBuilder();
         sb.append(id).append(",").append(name).append(",").append(age);
-        //writing into valid file if this is not throwing any exception
         validStudents.add(sb.toString());
         validWriter.write(sb.toString());
         validWriter.newLine();
