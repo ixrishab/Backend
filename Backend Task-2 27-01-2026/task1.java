@@ -9,7 +9,7 @@ public class task1 {
         int charCount = 0;
 
         Map<String, Integer> wordFrequency = new HashMap<>();
-        // Reading from a file
+        
         try (BufferedReader reader = new BufferedReader(new FileReader("task1.txt"))) {
 
             String line;
@@ -20,8 +20,19 @@ public class task1 {
                 for (char c : line.toCharArray()) {
                     if (c == '.' || c == '!' || c == '?') {
                         sentenceCount++;
-                    }
+                    } 
                 }
+                /*
+        try (BufferedReader reader = new BufferedReader(new FileReader("task1.txt"))) {
+
+            for (String line : reader.lines().toArray(String[]::new)) {
+                System.out.println(line);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+}
+ */
 
                 // Count characters
                 charCount += line.replace(" ", "").length();
@@ -34,13 +45,13 @@ public class task1 {
                     System.out.println( reversedSentence);
                 }
 
-                // Clean and normalize text
+                
                 line = line.toLowerCase().replaceAll("[^a-z0-9\\s]", "");
 
-                // replace multiple spaces
+                
                 line = line.replaceAll("\\s+", " ").trim();
 
-                // Count words
+                
                 if (!line.trim().isEmpty()) {
                     String[] words = line.trim().split("\\s+");
                     wordCount += words.length;
@@ -51,18 +62,17 @@ public class task1 {
                 }
             }
 
-            // Sort by frequency 
-            // //returns key value pair and then adds to Arraylist
+            
             List<Map.Entry<String, Integer>> sortedWords = new ArrayList<>(wordFrequency.entrySet());
 
             sortedWords.sort((a, b) -> b.getValue().compareTo(a.getValue()));
 
-            //Printing 3 variables
+            
             System.out.println("Total characters excluding spaces: " + charCount);
             System.out.println("Total words: " + wordCount);
             System.out.println("Total sentences: " + sentenceCount);
 
-            // Top 5
+            
             System.out.println("Top 5 most frequent occurring words:");
             for (int i = 0; i < Math.min(5, sortedWords.size()); i++) {
                 Map.Entry<String, Integer> entry = sortedWords.get(i);
@@ -78,14 +88,14 @@ public class task1 {
         String s2 = "Java";
         String s3 = new String("Java");
 
-        // Using ==
+        
         System.out.println("s1 == s2 : " + (s1 == s2)
                 + "true because both point to the same String literal");
 
         System.out.println("s1 == s3 : " + (s1 == s3)
                 + "false because s3 is a new object in heap memory");
 
-        // Using equals()
+        
         System.out.println("s1.equals(s2) : " + s1.equals(s2)
                 + "true because contents are same");
 
