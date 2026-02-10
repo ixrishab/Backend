@@ -49,7 +49,7 @@ class Validator {
         }
     }
 
-    public static void validateAge(int age) {
+    public static void validateAge(int age) throws InvalidAgeException{
         if (age <= 0) {
             throw new InvalidAgeException("Age must be positive");
         }
