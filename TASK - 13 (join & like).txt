@@ -1,8 +1,0 @@
-TASK - 13 (join & like)
-
-Select * from Customers c join Orders o on o.customer_id = c.customer_id where c.name like 'R%';
-
-Select * from Employees e join Departments d on d.dep_id = e.dep_id where e.emp_name like 'A%';
-
-Select * from Products p join order_items oi on oi.product_id=p.product_id where p.product_name like 'M%';
-
