@@ -1,0 +1,62 @@
+--Departments tab
+INSERT INTO Departments VALUES
+(1,'Human Resources'),
+(2,'Finance'),
+(3,'Engineering'),
+(4,'Marketing'),
+(5,'Sales');
+
+--Employees tab
+INSERT INTO Employees VALUES
+(101,'Arjun','arjun@company.com',3,75000,NULL),    
+(102,'Kiran','kiran@company.com',3,56000,101),      
+(103,'Meena','meena@company.com',2,69000,NULL),     
+(104,'Ravi','ravi@company.com',2,52000,103),        
+(105,'Suresh','suresh@company.com',4,61000,NULL),   
+(106,'Pradeep','pradeep@company.com',4,45000,105),  
+(107,'Ananya','ananya@company.com',1,58000,NULL),   
+(108,'Disha','disha@company.com',1,43000,107),     
+(109,'Tarun','tarun@company.com',5,67000,NULL),    
+(110,'Jai','jai@company.com',5,42000,109); 
+
+--products tab
+INSERT INTO Products VALUES
+(1,'Laptop',65000,1),
+(2,'Mouse',500,3),
+(3,'Keyboard',800,4),
+(4,'Monitor',7000,1),
+(5,'Headphones',1200,2),
+(6,'USB Cable',150,3),
+(7,'Webcam',2500,4);
+
+
+--order items table
+INSERT INTO Order_Items VALUES
+(1,2,3),   
+(1,3,1),   
+(2,1,1),   
+(3,4,2),   
+(4,5,2),   
+(5,3,1),   
+(6,1,1),   
+(7,2,1),   
+(8,4,1),  
+(9,7,1);   
+
+--supp table
+INSERT INTO Suppliers VALUES
+(1,'TechSource Ltd','support@techsource.com',9876543210,'India'),
+(2,'Global Electronics','info@globalelec.com',9876501234,'USA'),
+(3,'CompuWorld','sales@compuworld.com',9998887776,'India'),
+(4,'TechGear International','service@techgear.com',9988776655,'Germany'),
+(5,'Digital Hub','contact@digitalhub.com',9877001122,'Australia');
+
+ALTER TABLE Employees
+ADD CONSTRAINT fk_employees_department
+FOREIGN KEY (dep_id)
+REFERENCES Departments(dep_id);
+
+ALTER TABLE Employees
+ADD CONSTRAINT fk_employees_manager
+FOREIGN KEY (manager_id)
+REFERENCES Employees(emp_id);

@@ -1,0 +1,72 @@
+Select * from Customers;
+Insert into Customers (name ,  City , email) values ('Rishab',1001,'Hyderabad','rishab@gmail.com');
+
+Insert into Customers (name ,  City , email) values ('Rahul',1002,'Kolkata','rishab@gmail.com');
+Insert into Customers (name ,  City , email) values ('Sneha',1003,'Cyberabad','Sneha@gmail.com');
+Insert into Customers (name ,  City , email) values ('Raju',1004,'Shamshabad','raju@gmail.com');
+Insert into Customers (name ,  City , email) values ('Snehith',1005,'Delhi','snehithreddy@gmail.com');
+
+Insert into Customers (name ,  City , email) values ('Sam',1006,'Delhi','sam@gmail.com');
+Insert into Customers (name ,  City , email) values ('John',1007,'Cyberabad','john@yahoo.com');
+Insert into Customers (name ,  City , email) values ('Yuvraj',1008,'Mumbai','yuvraj@outlook.com');
+Insert into Customers (name ,  City , email) values ('Revanth',1009,'Coimbatore','revanth@yahoo.com');
+Insert into Customers (name ,  City , email) values ('Abhishek',1010,'Kochi','snehithreddy@rediffmail.com');
+
+
+Select * from Orders;
+Select * from Customers;
+Insert into Orders (order_id,customer_id,order_date,amount) values (1001,4,'2025-01-23',3000);
+--S
+Insert into Orders (r) values (1002,4,'2025-01-23',300);
+Insert into Orders (order_id,customer_id,order_date,amount) values (1003,3,'2023-03-09',890);
+Insert into Orders (order_id,customer_id,order_date,amount) values (1004,7,'2025-11-23',1900);
+Insert into Orders (order_id,customer_id,order_date,amount) values (1005,4,'2024-12-23',200);
+Insert into Orders (order_id,customer_id,order_date,amount) values (1006,2,'2022-02-13',500);
+
+--S
+Insert into Orders (order_id,customer_id,order_date,amount) values (1007,2,'2024-01-23',3000);
+Insert into Orders (order_id,customer_id,order_date,amount) values (1008,3,'2025-11-23',3000);
+Insert into Orders (order_id,customer_id,order_date,amount) values (1009,5,'2025-07-03',3000);
+Insert into Orders (order_id,customer_id,order_date,amount) values (1010,5,'2025-01-13',3000);
+
+/*Msg 2627, Level 14, State 1, Line 32
+Violation of PRIMARY KEY constraint 'PK_Orders'. Cannot insert duplicate key in object 'dbo.Orders'. The duplicate key value is (1010).
+The statement has been terminated.*/
+Insert into Orders(order_id,customer_id,order_date,amount) values (1010,111,'2025-01-13',3000);
+
+
+alter table Customers  add constraint uq_email unique(email);
+
+alter table student_courses
+add constraint fk_courses_id
+foreign key (course_id)
+references courses (id);
+
+alter table student_courses
+add constraint fk_students_id
+foreign key (student_id)
+references students (id);
+
+select * from students;
+select * from courses;
+select * from student_courses;
+ 
+--Students Table
+Insert into students (id , name , email) values (1,'Rishab','rishab@gmail.com');
+Insert into students (id , name , email) values (2,'Sneha','sneha@gmail.com');
+Insert into students (id , name , email) values (3,'Sanjana','snajana@gmail.com');
+Insert into students (id , name , email) values (4,'Amogh','amogh@gmail.com');
+Insert into students (id , name , email) values (5,'Rohit','rohitsingh@gmail.com');
+
+--Courses Table
+Insert into courses (id,title,credits) values (1, 'Database Systems', '3');
+Insert into courses (id,title,credits) values (2, 'Operating Systems', '4');
+Insert into courses (id,title,credits) values (3, 'Computer Networks', '3');
+Insert into courses (id,title,credits) values (4, 'Software Engineering', '5');
+Insert into courses (id,title,credits) values (5, 'Artificial Intelligence', '4');
+
+insert into student_courses (student_id,course_id,enrollment_date) values (2,4,'2025-09-15');
+insert into student_courses (student_id,course_id,enrollment_date) values (1,3,'2023-09-15');
+insert into student_courses (student_id,course_id,enrollment_date) values (5,2,'2025-11-15');
+insert into student_courses (student_id,course_id,enrollment_date) values (3,1,'2025-09-09');
+insert into student_courses (student_id,course_id,enrollment_date) values (4,5,'2022-04-05');
