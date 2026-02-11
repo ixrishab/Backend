@@ -46,6 +46,13 @@ class Validator {
     public static void validateUsername(String username) throws InvalidUserException {
         if (username == null || username.trim().length() < 3) {
             throw new InvalidUserException("Username must have at least 3 characters");
+
+            String regex = "^(?=.{3,20}$)(?!.*[._]{2})[A-Za-z0-9]+([._]?[A-Za-z0-9]+)*$";
+            if (!username.matches(regex)) {
+        throw new InvalidUserException(
+            "Invalid username.Use 3-20 chars, letters/numbers, single '.' or '_' allowed inside only."
+        );
+    }
         }
     }
 
