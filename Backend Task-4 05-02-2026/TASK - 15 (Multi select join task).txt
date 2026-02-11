@@ -4,7 +4,7 @@ Select * from students s join student_courses sc on s.id = sc.student_id join co
 
 Select *,
 	Case 
-	when amount > 1000 then 'Good Salary'
-	when amount < 1000 then 'Bad  Salary'
+	when amount > 44500 then 'Good Salary'
+	when amount < 44500 then 'Bad  Salary'
 	End as Salary_Status
 From Employees;
