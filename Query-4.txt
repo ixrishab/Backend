@@ -1,0 +1,4 @@
+Query-4
+Find parcels that changed owners more than 3 times. 
+
+Select TitleTransfer.Parcel_id,lp.parcel_number,COUNT(TitleTransfer.Parcel_id) as no_of_times_owner_changed from TitleTransfer join LandParcel as lp on TitleTransfer.Parcel_id=lp.Parcel_id  group by TitleTransfer.Parcel_id,lp.parcel_number  having COUNT(TitleTransfer.Parcel_id) > 3;
