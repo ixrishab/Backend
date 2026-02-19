@@ -1,0 +1,14 @@
+TASK - 9 (join & Group by)
+
+Select c.name,COUNT(o.customer_id) as No_Of_Orders from Orders o join Customers c on o.customer_id=c.customer_id group by o.customer_id,c.name;
+
+Select  c.customer_id,c.name,SUM(amount) as total_amount from Customers c join Orders o on c.customer_id=o.customer_id group by c.customer_id,c.name;
+
+Select d.dep_name,COUNT(e.dep_id) as Employee_Count_per_department from Employees e join Departments d on e.dep_id=d.dep_id group by e.dep_id,d.dep_name;
+
+//Using Right Join
+Select d.dep_name,COUNT(e.dep_id) as Employee_count From Employees e Right join Departments d on e.dep_id = d.dep_id group by e.dep_id,d.dep_name;
+
+Select p.product_id,p.product_name,COUNT(oi.product_id) as Product_order_count from order_items oi join  Products p on oi.product_id = p.product_id group by p.product_name,oi.product_id,p.product_id;
+
+Select d.dep_name,SUM(e.salary) as dep_Salary from Employees e join Departments d on e.dep_id = d.dep_id group by d.dep_name;

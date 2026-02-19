@@ -1,0 +1,10 @@
+TASK -11 (joins & count)
+
+Select c.customer_id,c.name,COUNT(o.customer_id) as No_Of_Orders from Orders o join Customers c on o.customer_id=c.customer_id group by o.customer_id,c.name,c.customer_id;
+
+
+select p.product_id, Count(*) as product_count from products as p join order_items as ot on p.product_id = ot.product_id group by p.product_id;
+
+
+Select d.dep_name,COUNT(e.dep_id) as Employee_Count_per_department from Employees e join Departments d on e.dep_id=d.dep_id group by e.dep_id,d.dep_name;
+

@@ -1,0 +1,15 @@
+TASK - 6 (Self join)
+
+Select * from Employees;
+
+Select e.*,e2.emp_name as manager_name from Employees e join Employees e2 on e.manager_id = e2.emp_id;
+
+Select m.emp_id,m.emp_name from Employees e join Employees m on e.manager_id=m.emp_id;
+
+SELECT m.emp_id AS manager_id, m.emp_name AS manager_name FROM Employees AS e JOIN Employees AS m ON e.manager_id = m.emp_id;
+
+
+
+
+
+

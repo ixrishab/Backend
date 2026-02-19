@@ -1,0 +1,20 @@
+Map<String , Integer> wordFrequency = new HashMap<>();
+try(BufferedReader reader = new BufferedReader(new FileReader(filename:"random.txt"))){
+    String line;
+    //int wordcount , SentenceCount , charCount 
+    while((line = reader.readLine())!=null){
+        for(char c : line.toCharArray()){
+            if(c=='.'||c=='!'||c=='?'){
+                SentenceCount++;
+            }
+        }
+    }
+    charCount += line.replace(" ","").length();
+    //Word count
+    if(!line.trim().isEmpty()){
+        String[] words = line.trim().split("\\s+");
+        wordcount += words.length;
+    }
+}catch(){
+
+}
