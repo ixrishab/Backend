@@ -1,3 +1,0 @@
-Query - 2
---Show properties where total ownership percentage is not equal to 100%. 
-Select * from LandParcel as lp join ParcelOwnership as po on lp.Parcel_id = po.parcel_id where ownership_percentage != 100;
