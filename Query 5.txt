@@ -1,4 +1,0 @@
-Query 5
---Show buildings that do not have a valid parcel record. 
-
-Select * from LandParcel as lp left join ParcelOwnership as p on lp.Parcel_id=p.parcel_id where ownership_id is null;
