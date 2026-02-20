@@ -1,0 +1,167 @@
+Table creation
+
+--LandParcel
+
+Select * from LandParcel;
+Insert into LandParcel values(1,'LP-100',10000,NULL,'Original','2020-01-10',1);
+
+insert into LandParcel 
+(parcel_id, parcel_number, area, parent_parcel_id, status, created_date, is_active)
+values
+(2, 'LP-100-A', 4000, 1, 'subdivided', '2022-03-15', 1),
+(3, 'LP-100-B', 6000, 1, 'subdivided', '2022-03-15', 1),
+
+(4, 'LP-200', 8000, NULL, 'original', '2021-06-20', 1),
+
+(5, 'LP-200-A', 3000, 4, 'subdivided', '2023-02-01', 1),
+(6, 'LP-200-B', 5000, 4, 'subdivided', '2023-02-01', 1),
+
+(7, 'LP-200-B1', 2500, 6, 'subdivided', '2024-05-10', 1),
+(8, 'LP-200-B2', 2500, 6, 'subdivided', '2024-05-10', 1),
+
+(9, 'LP-300', 9000, NULL, 'merged', '2019-08-01', 0);
+
+insert into LandParcel 
+(parcel_id, parcel_number, area, parent_parcel_id, status, created_date, is_active)
+values
+(10, 'LP-400', 12000, NULL, 'original', '2022-01-05', 1),
+
+
+(11, 'LP-400-A', 5000, 10, 'subdivided', '2023-04-12', 1),
+(12, 'LP-400-B', 7000, 10, 'subdivided', '2023-04-12', 1),
+
+(13, 'LP-400-A1', 2500, 11, 'subdivided', '2024-06-18', 1),
+(14, 'LP-400-A2', 2500, 11, 'subdivided', '2024-06-18', 1),
+
+
+(15, 'LP-500', 15000, NULL, 'subdivided', '2021-09-10', 0),
+
+(16, 'LP-500-A', 8000, 15, 'subdivided', '2022-11-25', 1),
+(17, 'LP-500-B', 7000, 15, 'subdivided', '2022-11-25', 1),
+
+
+(18, 'LP-600', 9500, NULL, 'original', '2020-12-30', 1),
+
+
+(19, 'LP-600-A', 4500, 18, 'subdivided', '2023-07-14', 1),
+(20, 'LP-600-B', 5000, 18, 'subdivided', '2023-07-14', 1);
+
+INSERT into Owner (owner_id, name, address, contact) values
+(1, 'Ramesh Kumar', 'Hyderabad, Telangana', '9876543210'),
+(2, 'Suresh Reddy', 'Warangal, Telangana', '9123456780'),
+(3, 'Anita Sharma', 'Vijayawada, Andhra Pradesh', '9988776655'),
+(4, 'Rahul Verma', 'Visakhapatnam, Andhra Pradesh', '9090909090'),
+(5, 'Priya Singh', 'Delhi, India', '9812345678'),
+(6, 'Kiran Patel', 'Ahmedabad, Gujarat', '9723456789'),
+(7, 'Meena Nair', 'Kochi, Kerala', '9567890123'),
+(8, 'Arjun Das', 'Bengaluru, Karnataka', '9345678901'),
+(9, 'Sneha Joshi', 'Pune, Maharashtra', '9456789012'),
+(10, 'Vikram Mehta', 'Mumbai, Maharashtra', '9234567890');
+
+Select * from Owner;
+
+Select * from ParcelOwnership;
+
+INSERT INTO ParcelOwnership 
+(ownership_id, parcel_id, owner_id, ownership_percentage, start_date, end_date, is_active)
+VALUES
+(1, 1, 1, 100.00, '2020-01-01', NULL, 1),
+
+(2, 2, 2, 60.00, '2021-03-10', NULL, 1),
+(3, 2, 3, 40.00, '2021-03-10', NULL, 1),
+
+(4, 3, 4, 100.00, '2019-06-15', '2022-05-20', 1),
+(5, 3, 5, 100.00, '2022-05-21', NULL, 1),
+
+(6, 4, 6, 50.00, '2020-08-01', NULL, 1),
+(7, 4, 7, 50.00, '2020-08-01', NULL, 1),
+
+(8, 5, 8, 70.00, '2021-11-11', NULL, 1),
+(9, 5, 9, 30.00, '2021-11-11', NULL, 1),
+
+(10, 6, 10, 100.00, '2018-02-14', '2020-12-31', 0),
+(11, 6, 1, 100.00, '2021-01-01', NULL, 1),
+
+(12, 7, 2, 80.00, '2022-07-07', NULL, 1),
+(13, 7, 3, 20.00, '2022-07-07', NULL, 1),
+
+(14, 8, 4, 100.00, '2023-01-01', NULL, 1),
+
+(15, 9, 5, 100.00, '2020-09-09', NULL, 1);
+
+Select * from TitleTransfer;
+
+insert into TitleTransfer
+(transfer_id, parcel_id, from_owner_id, to_owner_id, transfer_date, document_reference)
+values
+(1, 3, 4, 5, '2022-05-21', 'DOC-TR-1001'),
+
+(2, 6, 10, 1, '2021-01-01', 'DOC-TR-1002'),
+
+(3, 2, 2, 3, '2023-03-15', 'DOC-TR-1003'),
+
+(4, 7, 3, 2, '2024-01-10', 'DOC-TR-1004'),
+
+(5, 8, 4, 6, '2023-07-05', 'DOC-TR-1005'),
+
+(6, 5, 8, 9, '2022-11-20', 'DOC-TR-1006'),
+
+(7, 9, 5, 7, '2024-04-18', 'DOC-TR-1007');
+
+Select * from ZoningType;
+
+insert into ZoningType (zoning_id, zoning_name, description) values
+(1, 'Residential', 'Land designated for housing and residential buildings'),
+
+(2, 'Commercial', 'Land used for business, shops, offices, and trade activities'),
+
+(3, 'Agricultural', 'Land reserved for farming and cultivation purposes'),
+
+(4, 'Industrial', 'Land used for factories, warehouses, and manufacturing units'),
+
+(5, 'Mixed Use', 'Combination of residential and commercial purposes'),
+
+(6, 'Institutional', 'Land for schools, hospitals, and government buildings'),
+
+(7, 'Recreational', 'Land for parks, playgrounds, and public recreation');
+
+Select * from ParcelZoningHistory;
+
+insert into ParcelZoningHistory 
+(history_id, parcel_id, zoning_id, start_date, end_date)
+values
+(1, 1, 1, '2015-01-01', '2018-12-31'),
+(2, 1, 2, '2019-01-01', NULL),
+
+(3, 2, 1, '2016-03-15', NULL),
+
+(4, 3, 3, '2017-06-10', '2020-05-20'),
+(5, 3, 2, '2020-05-21', NULL),
+
+(6, 4, 4, '2018-02-01', NULL),
+
+(7, 5, 1, '2014-09-01', '2019-09-01'),
+(8, 5, 5, '2019-09-02', NULL),
+
+(9, 6, 2, '2021-01-01', NULL),
+
+(10, 7, 1, '2013-04-01', '2016-04-01'),
+(11, 7, 3, '2016-04-02', '2022-01-01'),
+(12, 7, 2, '2022-01-02', NULL),
+
+(13, 8, 4, '2019-07-15', NULL),
+
+(14, 9, 1, '2018-11-01', NULL),
+
+(15, 10, 2, '2020-10-10', NULL),
+
+(16, 11, 3, '2016-01-01', NULL),
+(17, 12, 1, '2017-05-01', NULL),
+(18, 13, 5, '2018-08-15', NULL),
+(19, 14, 2, '2019-09-10', NULL),
+(20, 15, 4, '2020-02-20', NULL);
+
+
+
+
+

@@ -1,0 +1,8 @@
+--QUERY - 1
+SELECT 
+    p.parcel_id AS parent_id,
+    p.parcel_number AS parent_number,
+    c.parcel_id AS child_id,
+    c.parcel_number AS child_number,
+    c.area
+from LandParcel p join LandParcel c on p.parcel_id = c.parent_parcel_id where p.parcel_id = 6;
