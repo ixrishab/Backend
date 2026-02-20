@@ -1,5 +1,0 @@
-Query-3
---List parcels whose zoning changed in the last 10 years. 
-Select distinct parcel_id
-from ParcelZoningHistory
-where start_date >= DATEADD(YEAR, -10, GETDATE()) OR end_date >= DATEADD(YEAR, -10, GETDATE()) OR end_date IS NULL;
