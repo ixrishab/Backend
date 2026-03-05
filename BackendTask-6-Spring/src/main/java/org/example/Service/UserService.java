@@ -1,5 +1,6 @@
 package org.example.Service;
 import org.example.Repository.UserRepository;
+@Service
 public class UserService {
     private final UserRepository userRepository;
 
