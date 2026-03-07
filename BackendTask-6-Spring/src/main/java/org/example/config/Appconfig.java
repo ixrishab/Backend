@@ -8,14 +8,14 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("org.example")
 public class Appconfig {
 
-    @Bean
-    public UserRepository userRepository(){
-        return new UserRepository();
-    }
-
-    @Bean
-    public UserService userService(){
-        return new UserService(userRepository());
-    }
+//    @Bean
+//    public UserRepository userRepository(){
+//        return new UserRepository();
+//    }
+//
+//    @Bean
+//    public UserService userService(){
+//        return new UserService(userRepository());
+//    }
 
 }
