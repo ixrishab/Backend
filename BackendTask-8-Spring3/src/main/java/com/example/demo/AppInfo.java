@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class AppInfo {
     @Value("${app.name}")
     private  String appName;
-    @Value("${app.welcomeMessage}")
+    @Value("${app.WelcomeMessage}")
     private String welcomeMessage;
 
     @PostConstruct

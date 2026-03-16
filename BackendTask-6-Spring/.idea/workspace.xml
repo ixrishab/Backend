@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41fd1552-36ae-47c0-bb01-758ecbede69f" name="Changes" comment="" />
+    <list default="true" id="41fd1552-36ae-47c0-bb01-758ecbede69f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../BackendTask-10-Spring5/demo/src/main/java/com/example/Controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackendTask-10-Spring5/demo/src/main/java/com/example/demo/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackendTask-10-Spring5/demo/src/main/java/com/example/Backend/Task_10_Spring5/Controller/StudentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackendTask-10-Spring5/demo/src/main/java/com/example/Backend/Task_10_Spring5/Repository/StudentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackendTask-10-Spring5/demo/src/main/java/com/example/Backend/Task_10_Spring5/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackendTask-8-Spring3/src/main/java/com/example/demo/AppInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackendTask-8-Spring3/src/main/java/com/example/demo/AppInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackendTask-8-Spring3/src/main/java/com/example/demo/BackendTask8SpringTask3Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackendTask-8-Spring3/src/main/java/com/example/demo/BackendTask8SpringTask3Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackendTask-8-Spring3/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackendTask-8-Spring3/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackendTask-8-Spring3/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackendTask-8-Spring3/src/main/resources/application-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackendTask-8-Spring3/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../BackendTask-8-Spring3/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
