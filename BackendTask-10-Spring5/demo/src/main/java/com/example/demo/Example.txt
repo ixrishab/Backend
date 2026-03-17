@@ -1,0 +1,9 @@
+@GetMapping("/id")
+public ResponseEntity<Student> findById(@RequestParam long id) {
+    return repo.findStudentById(id)
+               .map(ResponseEntity::ok)
+               .orElse(ResponseEntity.notFound().build());
+}
+
+@Query("SELECT s FROM Student s WHERE s.id = :id")
+Optional<Student> findStudentById(@Param("id") long id);

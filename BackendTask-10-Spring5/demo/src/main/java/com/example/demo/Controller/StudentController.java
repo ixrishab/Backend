@@ -46,4 +46,8 @@ public class StudentController {
         }
         return ResponseEntity.notFound().build();
     }
+    @GetMapping("/age")
+    public List<Student> findByAge(@RequestParam int age) {
+        return repo.findStudentsOlderThan(age);
+    }
 }
