@@ -7,7 +7,7 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;  // ✅ use wrapper type
+    private Long id;  
 
     @Column(name = "student_name")
     private String name;
